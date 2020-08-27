@@ -33,7 +33,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s`}
       meta={[
         {
           name: `description`,
@@ -68,6 +68,13 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: "stylesheet",
+          href:
+            "https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400&display=swap",
+        },
+      ]}
     />
   )
 }

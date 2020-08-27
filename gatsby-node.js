@@ -5,3 +5,10 @@
  */
 
 // You can delete this file if you're not using it
+
+const builder = require("./node/builder")
+const fetch = require("node-fetch")
+
+exports.createPages = async options => {
+  await builder.createPages(options)
+}
