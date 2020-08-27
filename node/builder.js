@@ -2,6 +2,10 @@ const path = require(`path`)
 const fetch = require("node-fetch")
 const home = path.resolve(`src/templates/home.js`)
 const requestCache = {}
+const endpointOrigin =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:1337"
+    : "http://pavaris.com"
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -23,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
       })
   }
 
-  const menu = await getData("http://localhost:1337/navigation")
+  const menu = await getData(`${endpointOrigin}/navigation`)
 
   console.log(menu)
 
