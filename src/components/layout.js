@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import "./reset.scss"
+import "./styles/reset.scss"
 
 const Layout = ({ children }) => {
   return (
